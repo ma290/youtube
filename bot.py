@@ -16,8 +16,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Bot token from BotFather
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")  # Use environment variable
+# Bot token hardcoded (replace with your actual token)
+TOKEN = "1701760957:AAHYs626-DnndxSeS9N_7y1_2V3Vn071Yck"  # Replace with your BotFather token
 
 # Define the /start command handler
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
