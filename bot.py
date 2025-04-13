@@ -5,7 +5,7 @@ from telegram.ext import (
     Application,
     CommandHandler,
     MessageHandler,
-    Filters,
+    filters,  # Changed from Filters to filters
     ContextTypes,
 )
 import yt_dlp
@@ -17,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Bot token hardcoded (replace with your actual token)
-TOKEN = "1701760957:AAHYs626-DnndxSeS9N_7y1_2V3Vn071Yck"  # Replace with your BotFather token
+TOKEN = "your-bot-token-here"  # Replace with your BotFather token
 
 # Define the /start command handler
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -90,7 +90,7 @@ def main() -> None:
 
     # Add handlers
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(MessageHandler(Filters.text & ~Filters.command, download_video))
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, download_video))  # Updated Filters to filters
 
     # Start the bot
     application.run_polling(allowed_updates=Update.ALL_TYPES)
